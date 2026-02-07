@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join JPCS - Register for membership and become part of our community">
+    <title>Join JPCS - Membership Registration</title>
+    <link rel="icon" type="image/png" href="main/assets/img/favicon.png">
+    <link rel="stylesheet" href="main/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="main/assets/img/logo.png" alt="JPCS Logo" class="logo-image">
+                <span class="logo-text">Junior Philippine Computer Society</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="officers.html" class="nav-link">Officers</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="membership.html" class="nav-link cta-link active">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header membership-header">
+        <div class="container">
+            <h1 class="page-title">Join <span class="highlight">JPCS</span></h1>
+            <p class="page-subtitle">
+                Start your journey with us and unlock endless opportunities
+            </p>
+        </div>
+    </section>
+
+    <!-- Membership Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Membership Benefits</h2>
+                <p class="section-subtitle">What you'll get as a JPCS member</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎓</span>
+                    <h3 class="benefit-title">Free Workshops</h3>
+                    <p class="benefit-text">Access to all our workshops and training sessions</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏆</span>
+                    <h3 class="benefit-title">Competitions</h3>
+                    <p class="benefit-text">Participate in hackathons and coding challenges</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤝</span>
+                    <h3 class="benefit-title">Networking</h3>
+                    <p class="benefit-text">Connect with industry professionals and peers</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📜</span>
+                    <h3 class="benefit-title">Certificates</h3>
+                    <p class="benefit-text">Official certificates for events and accomplishments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-wrapper">
+                <div class="form-side">
+                    <div class="form-header">
+                        <h2 class="form-title">Membership Application</h2>
+                        <p class="form-description">Fill out the form below to apply for membership</p>
+                        <div class="form-notice">
+                            <span class="notice-icon">💾</span>
+                            <span>Your progress is automatically saved</span>
+                        </div>
+                    </div>
+
+                    <form id="membership-form" class="membership-form" novalidate>
+                        <!-- Personal Information -->
+                        <fieldset class="form-section">
+                            <legend class="form-section-title">Personal Information</legend>
+                            
+                            <div class="form-group">
+                                <label for="full-name" class="form-label">
+                                    Full Name <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="full-name" 
+                                    name="fullName" 
+                                    class="form-input" 
+                                    placeholder="Juan Dela Cruz"
+                                    required
+                                >
+                                <span class="error-message" id="full-name-error"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="student-id" class="form-label">
+                                        Student ID <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="student-id" 
+                                        name="studentId" 
+                                        class="form-input" 
+                                        placeholder="2024-12345"
+                                        required
+                                    >
+                                    <span class="error-message" id="student-id-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        Email Address <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="form-input" 
+                                        placeholder="juan.delacruz@email.com"
+                                        required
+                                    >
+                                    <span class="error-message" id="email-error"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Academic Information -->
+                        <fieldset class="form-section">
+                            <legend class="form-section-title">Academic Information</legend>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="year-level" class="form-label">
+                                        Year Level <span class="required">*</span>
+                                    </label>
+                                    <select id="year-level" name="yearLevel" class="form-select" required>
+                                        <option value="">Select year level</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                    </select>
+                                    <span class="error-message" id="year-level-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="program" class="form-label">
+                                        Program/Section <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="program" 
+                                        name="program" 
+                                        class="form-input" 
+                                        placeholder="BSIT 2-A"
+                                        required
+                                    >
+                                    <span class="error-message" id="program-error"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Interests -->
+                        <fieldset class="form-section">
+                            <legend class="form-section-title">
+                                Areas of Interest <span class="required">*</span>
+                            </legend>
+                            <p class="form-hint">Select at least one area you're interested in</p>
+                            
+                            <div class="checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Web Development" class="form-checkbox">
+                                    <span class="checkbox-text">Web Development</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Mobile Development" class="form-checkbox">
+                                    <span class="checkbox-text">Mobile Development</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Data Science" class="form-checkbox">
+                                    <span class="checkbox-text">Data Science</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Artificial Intelligence" class="form-checkbox">
+                                    <span class="checkbox-text">Artificial Intelligence</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Cybersecurity" class="form-checkbox">
+                                    <span class="checkbox-text">Cybersecurity</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Game Development" class="form-checkbox">
+                                    <span class="checkbox-text">Game Development</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="Cloud Computing" class="form-checkbox">
+                                    <span class="checkbox-text">Cloud Computing</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="UI/UX Design" class="form-checkbox">
+                                    <span class="checkbox-text">UI/UX Design</span>
+                                </label>
+                            </div>
+                            <span class="error-message" id="interests-error"></span>
+                        </fieldset>
+
+                        <!-- Terms and Conditions -->
+                        <fieldset class="form-section">
+                            <label class="checkbox-label terms-checkbox">
+                                <input 
+                                    type="checkbox" 
+                                    id="terms" 
+                                    name="terms" 
+                                    class="form-checkbox" 
+                                    required
+                                >
+                                <span class="checkbox-text">
+                                    I agree to the <a href="#" class="terms-link">terms and conditions</a> 
+                                    and confirm that all information provided is accurate <span class="required">*</span>
+                                </span>
+                            </label>
+                            <span class="error-message" id="terms-error"></span>
+                        </fieldset>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                            <button type="button" id="clear-form-btn" class="btn btn-outline">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="info-side">
+                    <div class="info-card">
+                        <h3 class="info-title">What Happens Next?</h3>
+                        <div class="info-steps">
+                            <div class="info-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Submit Application</h4>
+                                    <p class="step-text">Fill out and submit the membership form</p>
+                                </div>
+                            </div>
+                            <div class="info-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Review Process</h4>
+                                    <p class="step-text">We'll review your application within 3-5 business days</p>
+                                </div>
+                            </div>
+                            <div class="info-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Welcome Email</h4>
+                                    <p class="step-text">Receive your welcome email with membership details</p>
+                                </div>
+                            </div>
+                            <div class="info-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Get Started</h4>
+                                    <p class="step-text">Join our events and start your JPCS journey!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-title">Need Help?</h3>
+                        <p class="info-text">
+                            If you have any questions about the membership process, 
+                            feel free to reach out to us.
+                        </p>
+                        <div class="contact-list">
+                            <div class="contact-item-small">
+                                <span>📧</span>
+                                <span>jpcs@university.edu.ph</span>
+                            </div>
+                            <div class="contact-item-small">
+                                <span>📱</span>
+                                <span>+63 917 123 4567</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content success-modal-content">
+            <div class="success-icon">✅</div>
+            <h2 id="success-modal-title" class="success-title">Application Submitted!</h2>
+            <p class="success-message">
+                Thank you for applying to join JPCS. We've received your application and will review it shortly.
+            </p>
+            <div class="application-summary">
+                <h3 class="summary-title">Application Summary</h3>
+                <div id="summary-content" class="summary-content">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="success-actions">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <button id="close-success-modal" class="btn btn-outline">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-title">About JPCS</h3>
+                    <p class="footer-text">
+                        The Junior Philippine Computer Society is a student organization dedicated to empowering students through technology, innovation, and community. We provide opportunities to learn, compete, and connect with fellow tech enthusiasts.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="membership.html">Join Us</a></li>
+                        <li><a href="officers.html">Officers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Junior Philippine Computer Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main/assets/js/data.js"></script>
+    <script src="main/assets/js/app.js"></script>
+</body>
+</html>
