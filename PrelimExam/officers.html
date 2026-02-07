@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the JPCS Officers and Executive Board Members">
+    <title>Officers & Members - JPCS</title>
+    <link rel="icon" type="image/png" href="main/assets/img/favicon.png">
+    <link rel="stylesheet" href="main/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="main/assets/img/logo.png" alt="JPCS Logo" class="logo-image">
+                <span class="logo-text">Junior Philippine Computer Society</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="officers.html" class="nav-link active">Officers</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="membership.html" class="nav-link cta-link">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Meet Our <span class="highlight">Team</span></h1>
+            <p class="page-subtitle">
+                Passionate leaders committed to making JPCS the best student organization
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="officers-controls">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filters-row">
+                    <div class="search-box">
+                        <label for="officer-search" class="visually-hidden">Search officers by name</label>
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18.5 18.5l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input 
+                            type="text" 
+                            id="officer-search" 
+                            placeholder="Search by name..." 
+                            aria-label="Search officers by name"
+                        >
+                    </div>
+                    <div class="filter-group">
+                        <label for="role-filter" class="filter-label">Role:</label>
+                        <select id="role-filter" class="filter-select">
+                            <option value="all">All Roles</option>
+                            <option value="executive">Executive Board</option>
+                            <option value="technical">Technical Team</option>
+                            <option value="events">Events Team</option>
+                            <option value="marketing">Marketing Team</option>
+                        </select>
+                    </div>
+                    <button id="clear-filters" class="clear-filters-btn" aria-label="Clear all filters">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Clear
+                    </button>
+                </div>
+                <div id="active-filters" class="active-filters" role="status" aria-live="polite"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Officers Grid -->
+    <section class="officers-section">
+        <div class="container">
+            <div id="officers-grid" class="officers-grid">
+                <!-- Officers will be loaded here by JavaScript -->
+            </div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No members found</h3>
+                    <p>Try adjusting your search or filter criteria to find what you're looking for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Officer Detail Modal -->
+    <div id="officer-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content officer-modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="officer-detail">
+                <div class="officer-detail-header">
+                    <div class="officer-detail-avatar">
+                        <span id="modal-avatar"></span>
+                    </div>
+                    <div class="officer-detail-info">
+                        <h2 id="modal-title" class="officer-detail-name"></h2>
+                        <p id="modal-position" class="officer-detail-position"></p>
+                        <p id="modal-team" class="officer-detail-team"></p>
+                    </div>
+                </div>
+                <div class="officer-detail-body">
+                    <div class="detail-section">
+                        <h3 class="detail-heading">About</h3>
+                        <p id="modal-bio" class="detail-text"></p>
+                    </div>
+                    <div class="detail-section">
+                        <h3 class="detail-heading">Skills & Expertise</h3>
+                        <div id="modal-skills" class="skills-tags"></div>
+                    </div>
+                    <div class="detail-section">
+                        <h3 class="detail-heading">Contact</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <a id="modal-email" href="#" class="contact-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-title">About JPCS</h3>
+                    <p class="footer-text">
+                        The Junior Philippine Computer Society is a student organization dedicated to empowering students through technology, innovation, and community. We provide opportunities to learn, compete, and connect with fellow tech enthusiasts.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="membership.html">Join Us</a></li>
+                        <li><a href="officers.html">Officers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Junior Philippine Computer Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main/assets/js/data.js"></script>
+    <script src="main/assets/js/app.js"></script>
+</body>
+</html>
