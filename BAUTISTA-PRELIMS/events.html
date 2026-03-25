@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore JPCS events, workshops, competitions, and activities">
+    <title>Events & Activities - JPCS</title>
+    <link rel="icon" type="image/png" href="main/assets/img/favicon.png">
+    <link rel="stylesheet" href="main/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="main/assets/img/logo.png" alt="JPCS Logo" class="logo-image">
+                <span class="logo-text">Junior Philippine Computer Society</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="officers.html" class="nav-link">Officers</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="membership.html" class="nav-link cta-link">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Events & <span class="highlight">Activities</span></h1>
+            <p class="page-subtitle">
+                Discover exciting opportunities to learn, compete, and connect
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="events-filters">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label class="filter-label">Category:</label>
+                    <div class="filter-buttons" id="category-filter">
+                        <button class="filter-btn active" data-category="all">All Events</button>
+                        <button class="filter-btn" data-category="Workshop">Workshops</button>
+                        <button class="filter-btn" data-category="Seminar">Seminars</button>
+                        <button class="filter-btn" data-category="Competition">Competitions</button>
+                        <button class="filter-btn" data-category="Community">Community</button>
+                        <button class="filter-btn" data-category="Social">Social</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Time:</label>
+                    <div class="filter-buttons" id="time-filter">
+                        <button class="filter-btn active" data-time="all">All Time</button>
+                        <button class="filter-btn" data-time="upcoming">Upcoming</button>
+                        <button class="filter-btn" data-time="past">Past</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section class="events-section">
+        <div class="container">
+            <div id="events-grid" class="events-grid">
+                <!-- Events will be loaded here by JavaScript -->
+            </div>
+            <div id="no-events" class="no-results" style="display: none;">
+                <p>No events found matching your filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Detail Modal -->
+    <div id="event-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content event-modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="event-detail">
+                <div class="event-detail-header">
+                    <span id="event-modal-icon" class="event-detail-icon"></span>
+                    <div class="event-detail-meta">
+                        <span id="event-modal-category" class="event-badge"></span>
+                        <span id="event-modal-status" class="event-status-badge"></span>
+                    </div>
+                </div>
+                <h2 id="event-modal-title" class="event-detail-title"></h2>
+                <div class="event-detail-info">
+                    <div class="event-info-item">
+                        <span class="info-icon">📅</span>
+                        <div class="info-content">
+                            <span class="info-label">Date & Time</span>
+                            <span id="event-modal-datetime" class="info-value"></span>
+                        </div>
+                    </div>
+                    <div class="event-info-item">
+                        <span class="info-icon">📍</span>
+                        <div class="info-content">
+                            <span class="info-label">Location</span>
+                            <span id="event-modal-location" class="info-value"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-detail-body">
+                    <div class="detail-section">
+                        <h3 class="detail-heading">About This Event</h3>
+                        <p id="event-modal-description" class="detail-text"></p>
+                    </div>
+                    <div class="detail-section">
+                        <h3 class="detail-heading">Agenda</h3>
+                        <ul id="event-modal-agenda" class="agenda-list"></ul>
+                    </div>
+                    <div class="detail-section">
+                        <h3 class="detail-heading">Who Should Attend?</h3>
+                        <p id="event-modal-target" class="detail-text"></p>
+                    </div>
+                </div>
+                <div class="event-detail-footer">
+                    <button id="event-register-btn" class="btn btn-primary">Register Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-title">About JPCS</h3>
+                    <p class="footer-text">
+                        The Junior Philippine Computer Society is a student organization dedicated to empowering students through technology, innovation, and community. We provide opportunities to learn, compete, and connect with fellow tech enthusiasts.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="membership.html">Join Us</a></li>
+                        <li><a href="officers.html">Officers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Junior Philippine Computer Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main/assets/js/data.js"></script>
+    <script src="main/assets/js/app.js"></script>
+</body>
+</html>

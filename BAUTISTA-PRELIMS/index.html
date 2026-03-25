@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Philippine Computer Society - Empowering future tech leaders">
+    <title>JPCS - Junior Philippine Computer Society</title>
+    <link rel="icon" type="image/png" href="main/assets/img/favicon.png">
+    <link rel="stylesheet" href="main/assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="main/assets/img/logo.png" alt="JPCS Logo" class="logo-image">
+                <span class="logo-text">Junior Philippine Computer Society</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="officers.html" class="nav-link">Officers</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="membership.html" class="nav-link cta-link">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Empowering the Next Generation of <span class="highlight">Tech Leaders</span>
+                </h1>
+                <p class="hero-description">
+                    Join JPCS and be part of a vibrant community of students passionate about technology, 
+                    innovation, and making a difference in the digital world.
+                </p>
+                <div class="hero-buttons">
+                    <a href="membership.html" class="btn btn-primary">Become a Member</a>
+                    <a href="events.html" class="btn btn-secondary">Explore Events</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-illustration">
+                    <div class="illustration-circle circle-1"></div>
+                    <div class="illustration-circle circle-2"></div>
+                    <div class="illustration-circle circle-3"></div>
+                    <div class="code-snippet">
+                        <span class="code-line">const future = 'technology';</span>
+                        <span class="code-line">let passion = true;</span>
+                        <span class="code-line">JPCS.join(you);</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Events Annually</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Student-Led</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="features-section whatwedo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">
+                    Discover the opportunities and experiences that await you at JPCS
+                </p>
+            </div>
+            
+            <!-- Filter Controls -->
+            <div class="whatwedo-filters">
+                <div class="filter-group">
+                    <label for="whatwedo-category" class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Category:
+                    </label>
+                    <select id="whatwedo-category" class="filter-select">
+                        <option value="All">All</option>
+                        <option value="Training">Training</option>
+                        <option value="Competitive">Competitive</option>
+                        <option value="Community">Community</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="whatwedo-search" class="filter-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Search:
+                    </label>
+                    <input type="text" id="whatwedo-search" class="filter-input" placeholder="Search activities...">
+                </div>
+            </div>
+            
+            <!-- Grid Container -->
+            <div id="whatwedo-grid" class="whatwedo-grid">
+                <!-- Items will be dynamically rendered here -->
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="whatwedo-no-results" class="no-results" style="display: none;">
+                <p>No activities found matching your criteria. Try adjusting your filters.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What We Do Modal -->
+    <div id="whatwedo-modal" class="modal whatwedo-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content whatwedo-modal-content">
+            <button class="modal-close" onclick="closeWhatWeDoModal()" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-body whatwedo-modal-body">
+                <div class="whatwedo-modal-image-wrapper">
+                    <img id="modal-whatwedo-image" src="" alt="" class="whatwedo-modal-image">
+                    <div class="whatwedo-modal-overlay"></div>
+                    <span id="modal-whatwedo-category" class="whatwedo-modal-category"></span>
+                </div>
+                <div class="whatwedo-modal-text">
+                    <h2 id="modal-whatwedo-title" class="whatwedo-modal-title"></h2>
+                    <p id="modal-whatwedo-fulltext" class="whatwedo-modal-description"></p>
+                    <div class="whatwedo-modal-highlights">
+                        <h3>What's Included:</h3>
+                        <ul id="modal-whatwedo-highlights"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events Preview -->
+    <section class="events-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Don't miss out on our exciting activities</p>
+            </div>
+            <div id="home-events-container" class="events-preview-grid">
+                <!-- Events will be loaded here by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="events.html" class="btn btn-outline">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Journey?</h2>
+                <p class="cta-description">
+                    Join hundreds of students who are already part of the JPCS community 
+                    and unlock endless opportunities for growth and success.
+                </p>
+                <a href="membership.html" class="btn btn-primary btn-large">Join JPCS Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-title">About JPCS</h3>
+                    <p class="footer-text">
+                        The Junior Philippine Computer Society is a student organization dedicated to empowering students through technology, innovation, and community. We provide opportunities to learn, compete, and connect with fellow tech enthusiasts.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="membership.html">Join Us</a></li>
+                        <li><a href="officers.html">Officers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                        <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Junior Philippine Computer Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load data first, then app script -->
+    <script src="main/assets/js/data.js"></script>
+    <script src="main/assets/js/app.js"></script>
+    <script src="main/assets/js/whatwedo.js"></script>
+</body>
+</html>
