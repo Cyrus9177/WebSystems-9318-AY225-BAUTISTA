@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metacritic Game Scraper</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000' width='100' height='100'/><text x='50' y='70' font-size='70' font-weight='bold' text-anchor='middle' fill='%23fff'>M</text></svg>">
+</head>
+<body>
+  <header>
+    <h1>Metacritic Game Scraper</h1>
+  </header>
+
+  <main>
+    <div class="panel">
+      <h2><i class="fas fa-magnifying-glass"></i> Search Games</h2>
+      <p class="subtitle">Enter game title, developer, platform, or publisher</p>
+      <input type="text" id="searchInput" placeholder="Search...">
+
+      <h2 style="margin-top: 1.5rem;"><i class="fas fa-sync-alt"></i> Refresh Data</h2>
+      <p class="subtitle">Fetch fresh data from Metacritic (10-25 games)</p>
+      <div class="control-group">
+        <label for="countInput">Number of games:</label>
+        <input type="number" id="countInput" min="10" max="25" value="10">
+        <button id="refreshBtn" class="btn-primary"><i class="fas fa-sync-alt"></i> Refresh</button>
+      </div>
+
+      <h2 style="margin-top: 1.5rem;"><i class="fas fa-download"></i> Export</h2>
+      <p class="subtitle">Download data in different formats</p>
+      <div class="action-buttons">
+        <a href="/api/games?count=10" target="_blank" class="btn"><i class="fas fa-code"></i> JSON API</a>
+        <button id="csvBtn" class="btn"><i class="fas fa-file-csv"></i> CSV Download</button>
+      </div>
+
+      <h2 style="margin-top: 1.5rem;"><i class="fas fa-gamepad"></i> Games</h2>
+      <div class="row-count">0 / 0 games</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Game Title</th>
+              <th>Release Date</th>
+              <th>Key Features</th>
+              <th>Platform Availability</th>
+              <th>Developer Information</th>
+              <th>Publisher Information</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id="gameTable">
+            <tr>
+              <td colspan="7" style="text-align: center; color: #999;">Loading games...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Ethical Web Scraping:</strong> This scraper respects Metacritic's servers with rate limiting and proper headers.</p>
+    <p>Data extracted includes: Game Title, Release Date, Key Features, Platforms, Developer, and Publisher information.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
